@@ -58,34 +58,42 @@ def read_json_data(filename):
         data = json.load(file)
     return data
 
-def generate_adj_matrix(v1: Vertice, v2: Vertice):
+
+def generate_adj_matrix(cenario):
+    matrix = []
+
+    for v1 in cenario:
+        print(v1)
+        adj = []
+        
+        for v2 in cenario:
+            adj.append(generate_score(v1, v2))
+
+        matrix.append(adj)
+
+    return matrix
+
+
+def generate_score(v1: Vertice, v2: Vertice):
     points = 0
 
-    if v1['Curso'] == v2['Curso'] and \
-        v1['Código'] == v2['Código']:
+    if v1['course'] == v2['course'] and \
+        v1['code'] == v2['code']:
         return points
 
-    if v1['prof'] == v2['prof']:
+    if v1['teacher'] == v2['teacher']:
         points += 1
 
-    if v1['Semestre'] == v2['Semestre'] and \
-        v1['Curso'] == v2['Curso']:
+    if v1['semester'] == v2['semester'] and \
+        v1['course'] == v2['course']:
         points += 2
 
     return points
 
+
 if __name__ == "__main__":
     cenario1 = read_json_data('./cenario1.json')
 
-    matrix = []
-
-    for v1 in cenario1:
-        print(v1)
-        adj = []
-        
-        for v2 in cenario1:
-            adj.append(generate_adj_matrix(v1, v2))
-
-        matrix.append(adj)
+    matrix = generate_adj_matrix(cenario1)
 
     print(matrix)
