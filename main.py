@@ -58,7 +58,7 @@ def read_json_data(filename):
         data = json.load(file)
     return data
 
-def color_vertex(v1: Vertice, v2: Vertice):
+def generate_adj_matrix(v1: Vertice, v2: Vertice):
     points = 0
 
     if v1['Curso'] == v2['Curso'] and \
@@ -84,7 +84,7 @@ if __name__ == "__main__":
         adj = []
         
         for v2 in cenario1:
-            adj.append(color_vertex(v1, v2))
+            adj.append(generate_adj_matrix(v1, v2))
 
         matrix.append(adj)
 
