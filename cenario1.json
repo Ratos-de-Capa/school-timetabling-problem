@@ -45,7 +45,7 @@
     "semester": 3,
     "code": "XDES04",
     "ch": 4,
-    "teacher": ""
+    "teacher": "Prof 1"
   },
   {
     "course": "CCO",
@@ -149,7 +149,7 @@
     "semester": 7,
     "code": "COM212",
     "ch": 4,
-    "teacher": ""
+    "teacher": "Prof 1"
   },
   {
     "course": "CCO",
@@ -389,7 +389,7 @@
     "semester": 5,
     "code": "OPT3",
     "ch": 4,
-    "teacher": "Prof 11"
+    "teacher": "Prof 1"
   },
   {
     "course": "Optativas",

@@ -1,9 +1,14 @@
 import json
 
 
-class Conflito:
+""" class Conflito:
     codigo: str
-    type: str | int
+    type: str | int """
+
+class Conflito:
+    def __init__(self, codigo, type):
+        self.codigo: str = codigo
+        self.type: str | int = type
 
 
 class Disciplina:
@@ -14,6 +19,17 @@ class Disciplina:
     ch: str
     prof: str
     conflitos: list[Conflito]
+
+""" class Disciplina:
+    def __init__(self, curso, semestre, codigo, nome, ch, prof):
+        self.curso: str = curso
+        self.semestre: str = semestre
+        self.codigo: str = codigo
+        self.nome: str = nome
+        self.ch: str = ch
+        self.prof: str = prof
+
+        self.conflitos: list[Conflito] = [] """
 
 
 class Vertice:
@@ -123,12 +139,40 @@ def generate_score(v1: Vertice, v2: Vertice):
 
     return points
 
+#   getHorarios(vertice, resultudo: [{ vertice: cor }]): cor[];
+#           validar horarios por regas;
+#           agrupar em padroes definos por CH;
+#           }
+
+def graphColoring(adjacencyMatrix, numColors):
+    numVertices = len(adjacencyMatrix)
+    colors = [-1] * numVertices
+    
+    def canUseColor(vertex, color):
+        for i in range(numVertices):
+            if adjacencyMatrix[vertex][i] == 1 and colors[i] == color:
+                return False
+        return True
+    
+    def assignColor(vertex):
+        for color in range(numColors):
+            if canUseColor(vertex, color):
+                return color
+    
+    for vertex in range(numVertices):
+        colors[vertex] = assignColor(vertex)
+    
+    return colors
+
 
 if __name__ == "__main__":
     cenario1 = read_json_data("./cenario1.json")
 
     matrix = generate_adj_matrix(cenario1)
 
-    cores = coloracao_por_matriz_adjacencia(matrix)
+    cores = graphColoring(matrix, 74);
+
+    for i in range(len(cenario1)):
+        print(f"------------\n\n    code: {cenario1[i]['code']} \n    Teacher: {cenario1[i]['teacher']} \n    Semester: {cenario1[i]['semester']} \n    Result: {cores[i]}")
 
     print(cores)

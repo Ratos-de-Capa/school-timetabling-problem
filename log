@@ -1,0 +1,325 @@
+------------
+
+    code: XDES01 
+    Teacher: Prof 12 
+    Semester: 1 
+    Result: 0
+------------
+
+    code: CRSC03 
+    Teacher: Prof 13 
+    Semester: 1 
+    Result: 1
+------------
+
+    code: XMAC01 
+    Teacher: Prof 5 
+    Semester: 1 
+    Result: 2
+------------
+
+    code: CAHC04 
+    Teacher: Prof 16 
+    Semester: 1 
+    Result: 3
+------------
+
+    code: XDES02 
+    Teacher: Prof 9 
+    Semester: 3 
+    Result: 0
+------------
+
+    code: XDES04 
+    Teacher: Prof 1 
+    Semester: 3 
+    Result: 1
+------------
+
+    code: CRSC02 
+    Teacher: Prof 13 
+    Semester: 3 
+    Result: 2
+------------
+
+    code: CTCO02 
+    Teacher: Prof 18 
+    Semester: 3 
+    Result: 3
+------------
+
+    code: XMAC02 
+    Teacher: Prof 9 
+    Semester: 3 
+    Result: 4
+------------
+
+    code: CMAC03 
+    Teacher: Prof 16 
+    Semester: 3 
+    Result: 5
+------------
+
+    code: CIC111 
+    Teacher: Prof 14 
+    Semester: 5 
+    Result: 0
+------------
+
+    code: CIC132 
+    Teacher: Prof 5 
+    Semester: 5 
+    Result: 1
+------------
+
+    code: COM211 
+    Teacher: Prof 11 
+    Semester: 5 
+    Result: 2
+------------
+
+    code: COM221 
+    Teacher: Prof 10 
+    Semester: 5 
+    Result: 3
+------------
+
+    code: COM230 
+    Teacher: Prof 12 
+    Semester: 5 
+    Result: 4
+------------
+
+    code: COM240 
+    Teacher: Prof 4 
+    Semester: 5 
+    Result: 5
+------------
+
+    code: COM311 
+    Teacher: Prof 2 
+    Semester: 5 
+    Result: 6
+------------
+
+    code: CIC271 
+    Teacher: Prof 7 
+    Semester: 7 
+    Result: 0
+------------
+
+    code: COM212 
+    Teacher: Prof 1 
+    Semester: 7 
+    Result: 2
+------------
+
+    code: COM213 
+    Teacher: Prof 6 
+    Semester: 7 
+    Result: 1
+------------
+
+    code: COM222 
+    Teacher: Prof 15 
+    Semester: 7 
+    Result: 3
+------------
+
+    code: COM242 
+    Teacher: Prof 16 
+    Semester: 7 
+    Result: 4
+------------
+
+    code: XDES01 
+    Teacher: Prof 15 
+    Semester: 1 
+    Result: 0
+------------
+
+    code: SAHC04 
+    Teacher: Prof 6 
+    Semester: 1 
+    Result: 2
+------------
+
+    code: SAHC05 
+    Teacher: Prof 10 
+    Semester: 1 
+    Result: 1
+------------
+
+    code: XDES03 
+    Teacher: Prof 15 
+    Semester: 3 
+    Result: 1
+------------
+
+    code: SDES05 
+    Teacher: Prof 8 
+    Semester: 3 
+    Result: 0
+------------
+
+    code: STCO02 
+    Teacher: Prof 14 
+    Semester: 3 
+    Result: 2
+------------
+
+    code: SRSC03 
+    Teacher: Prof 11 
+    Semester: 3 
+    Result: 3
+------------
+
+    code: MAT017 
+    Teacher: Prof 5 
+    Semester: 3 
+    Result: 4
+------------
+
+    code: COM220 
+    Teacher: Prof 9 
+    Semester: 3 
+    Result: 5
+------------
+
+    code: SIN260 
+    Teacher: Prof 7 
+    Semester: 5 
+    Result: 1
+------------
+
+    code: COM240 
+    Teacher: Prof 4 
+    Semester: 5 
+    Result: 0
+------------
+
+    code: SIN132 
+    Teacher: Prof 5 
+    Semester: 5 
+    Result: 3
+------------
+
+    code: COM231 
+    Teacher: Prof 18 
+    Semester: 5 
+    Result: 2
+------------
+
+    code: SIN210 
+    Teacher: Prof 8 
+    Semester: 7 
+    Result: 1
+------------
+
+    code: COM213 
+    Teacher: Prof 6 
+    Semester: 7 
+    Result: 0
+------------
+
+    code: SIN412 
+    Teacher: Prof 10 
+    Semester: 7 
+    Result: 2
+------------
+
+    code: SIN413 
+    Teacher: Prof 8 
+    Semester: 7 
+    Result: 3
+------------
+
+    code: SIN414 
+    Teacher: Prof 4 
+    Semester: 7 
+    Result: 4
+------------
+
+    code: SIN313 
+    Teacher: Prof 2 
+    Semester: 7 
+    Result: 5
+------------
+
+    code: CCO016 
+    Teacher: Prof 3 
+    Semester: 1 
+    Result: 0
+------------
+
+    code: CCO016 
+    Teacher: Prof 3 
+    Semester: 1 
+    Result: 0
+------------
+
+    code: CCO016 
+    Teacher: Prof 3 
+    Semester: 1 
+    Result: 0
+------------
+
+    code: CCO016 
+    Teacher: Prof 11 
+    Semester: 1 
+    Result: 0
+------------
+
+    code: CCO016 
+    Teacher: Prof 3 
+    Semester: 1 
+    Result: 0
+------------
+
+    code: OPT1 
+    Teacher: Prof 17 
+    Semester: 3 
+    Result: 0
+------------
+
+    code: OPT2 
+    Teacher: Prof 18 
+    Semester: 3 
+    Result: 1
+------------
+
+    code: OPT3 
+    Teacher: Prof 1 
+    Semester: 5 
+    Result: 0
+------------
+
+    code: OPT4 
+    Teacher: Prof 7 
+    Semester: 3 
+    Result: 2
+------------
+
+    code: POS1 
+    Teacher: Prof 14 
+    Semester: 3 
+    Result: 1
+------------
+
+    code: POS2 
+    Teacher: Prof 13 
+    Semester: 4 
+    Result: 0
+------------
+
+    code: POS3 
+    Teacher: Prof 12 
+    Semester: 5 
+    Result: 1
+------------
+
+    code: POS5 
+    Teacher: Prof 6 
+    Semester: 5 
+    Result: 3
+[0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 6, 0, 2, 1, 3, 4, 0, 2, 1, 1, 0, 2, 3, 4, 5, 1, 0, 3, 2, 1, 0, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 1, 0, 2, 1, 0, 1, 3]
