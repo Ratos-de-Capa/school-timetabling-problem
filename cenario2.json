@@ -1,378 +1,378 @@
 [
-    {
-       "Curso":"CCO",
-       "Semestre":2,
-       "Código":"XDES01",
-       "Disciplina":"Fundamentos de Programação (CCO e SIN)",
-       "CH":4,
-       "prof":"Prof 12"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":2,
-       "Código":"CDES05",
-       "Disciplina":"Programação Lógica e Funcional",
-       "CH":4,
-       "prof":"Prof 7"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":2,
-       "Código":"CRSC04",
-       "Disciplina":"Arquitetura de Computadores II",
-       "CH":4,
-       "prof":"Prof 13"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":2,
-       "Código":"CTCO01",
-       "Disciplina":"Algoritmos e Estruturas de Dados I",
-       "CH":4,
-       "prof":"Prof 15"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":2,
-       "Código":"CMAC04",
-       "Disciplina":"Modelagem Computacional",
-       "CH":4,
-       "prof":"Prof 5"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":2,
-       "Código":"CIC120",
-       "Disciplina":"Organização e Arquitetura de Computadores I",
-       "CH":4,
-       "prof":"Prof 13"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":2,
-       "Código":"CIC310",
-       "Disciplina":"Economia da Informação",
-       "CH":3,
-       "prof":"Prof 2"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":4,
-       "Código":"CIC110",
-       "Disciplina":"Análise e Projeto de Algoritmos I",
-       "CH":4,
-       "prof":"Prof 14"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":4,
-       "Código":"COM120",
-       "Disciplina":"Sistemas Operacionais",
-       "CH":5,
-       "prof":"Prof 11"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":4,
-       "Código":"COM210",
-       "Disciplina":"Engenharia de Sofware I",
-       "CH":5,
-       "prof":"Prof 8"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":4,
-       "Código":"COM220",
-       "Disciplina":"Computação Orientada a Objetos I",
-       "CH":4,
-       "prof":"Prof 9"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":6,
-       "Código":"CIC133",
-       "Disciplina":"Paradigmas de Programação",
-       "CH":4,
-       "prof":"Prof 7"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":6,
-       "Código":"CIC220",
-       "Disciplina":"Compiladores",
-       "CH":4,
-       "prof":"Prof 5"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":6,
-       "Código":"CIC260",
-       "Disciplina":"Inteligência Artificial",
-       "CH":4,
-       "prof":"Prof 3"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":6,
-       "Código":"CIC270",
-       "Disciplina":"Computação Gráfica",
-       "CH":3,
-       "prof":"Prof 6"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":6,
-       "Código":"COM231",
-       "Disciplina":"Banco de Dados II",
-       "CH":4,
-       "prof":"Prof 18"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":6,
-       "Código":"COM241",
-       "Disciplina":"Adm. e Gerência de Redes de Computadores",
-       "CH":3,
-       "prof":"Prof 4"
-    },
-    {
-       "Curso":"CCO",
-       "Semestre":6,
-       "Código":"COM312",
-       "Disciplina":"Informática e Sociedade",
-       "CH":3,
-       "prof":"Prof 2"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":2,
-       "Código":"XDES02",
-       "Disciplina":"Programação Orientada a Objetos",
-       "CH":4,
-       "prof":"Prof 9"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":2,
-       "Código":"XDES04",
-       "Disciplina":"Engenharia de Software I",
-       "CH":4,
-       "prof":"Prof 8"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":2,
-       "Código":"STCO01",
-       "Disciplina":"Algoritmos e Programação I",
-       "CH":4,
-       "prof":"Prof 14"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":2,
-       "Código":"XMAC01",
-       "Disciplina":"Matemática Discreta",
-       "CH":4,
-       "prof":"Prof 5"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":2,
-       "Código":"SIN411",
-       "Disciplina":"Comportamento Organizacional",
-       "CH":3,
-       "prof":"Prof 2"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":2,
-       "Código":"SIN120",
-       "Disciplina":"Organização e Arquitetura de Computadores",
-       "CH":4,
-       "prof":"Prof 11"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":4,
-       "Código":"COM221",
-       "Disciplina":"Computação Orientada a Objetos II",
-       "CH":4,
-       "prof":"Prof 15"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":4,
-       "Código":"COM120",
-       "Disciplina":"Sistemas Operacionais",
-       "CH":5,
-       "prof":"Prof 13"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":4,
-       "Código":"COM211",
-       "Disciplina":"Engenharia de Software II",
-       "CH":4,
-       "prof":"Prof 10"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":4,
-       "Código":"COM230",
-       "Disciplina":"Banco de Dados I",
-       "CH":4,
-       "prof":"Prof 12"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":4,
-       "Código":"SIN110",
-       "Disciplina":"Algoritmos e Grafos",
-       "CH":3,
-       "prof":"Prof 16"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":6,
-       "Código":"COM312",
-       "Disciplina":"Informática e Sociedade",
-       "CH":3,
-       "prof":"Prof 2"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":6,
-       "Código":"COM212",
-       "Disciplina":"Engenharia de Projeto de Software",
-       "CH":4,
-       "prof":""
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":6,
-       "Código":"COM241",
-       "Disciplina":"Adm. e Gerência de Redes de Computadores",
-       "CH":3,
-       "prof":"Prof 4"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":6,
-       "Código":"COM242",
-       "Disciplina":"Sistemas Distribuídos",
-       "CH":4,
-       "prof":"Prof 16"
-    },
-    {
-       "Curso":"SIN",
-       "Semestre":6,
-       "Código":"COM222",
-       "Disciplina":"Desenvolvimento de Sistemas na Web",
-       "CH":5,
-       "prof":"Prof 9"
-    },
-    {
-       "Curso":"Outros Cursos",
-       "Semestre":2,
-       "Código":"CCO016",
-       "Disciplina":"Fundamentos de Programação (EPR/EHD)",
-       "CH":4,
-       "prof":"Prof 15"
-    },
-    {
-       "Curso":"Outros Cursos",
-       "Semestre":2,
-       "Código":"CCO016",
-       "Disciplina":"Fundamentos de Programação (ECI/EAM)",
-       "CH":4,
-       "prof":"Prof 8"
-    },
-    {
-       "Curso":"Outros Cursos",
-       "Semestre":2,
-       "Código":"CCO016",
-       "Disciplina":"Fundamentos de Programação (FBA)",
-       "CH":4,
-       "prof":"Prof 3"
-    },
-    {
-       "Curso":"Optativas",
-       "Semestre":4,
-       "Código":"COM922",
-       "Disciplina":"Tópicos Especiais em Engenharia de Software (PEGA)",
-       "CH":4,
-       "prof":"Prof 4"
-    },
-    {
-       "Curso":"Optativas",
-       "Semestre":4,
-       "Código":"COM937",
-       "Disciplina":"Desenvolvimento de Jogos",
-       "CH":4,
-       "prof":"Prof 15"
-    },
-    {
-       "Curso":"Optativas",
-       "Semestre":6,
-       "Código":"ECOE44",
-       "Disciplina":"Maratona de Programação I",
-       "CH":3,
-       "prof":"Prof 11"
-    },
-    {
-       "Curso":"Optativas",
-       "Semestre":6,
-       "Código":"COM919",
-       "Disciplina":"Tópicos Especiais em Programação (Programação Parale",
-       "CH":4,
-       "prof":"Prof 13"
-    },
-    {
-       "Curso":"Optativas",
-       "Semestre":4,
-       "Código":"COM997",
-       "Disciplina":"Data Mining Aplicado",
-       "CH":4,
-       "prof":"Prof 18"
-    },
-    {
-       "Curso":"Pós- Graduação",
-       "Semestre":4,
-       "Código":"PCO118",
-       "Disciplina":"Arquitetura de Software (Opt+Pós)",
-       "CH":4,
-       "prof":"Prof 10"
-    },
-    {
-       "Curso":"Pós- Graduação",
-       "Semestre":4,
-       "Código":"PCO114",
-       "Disciplina":"Visualização de Informação (Opt+Pós)",
-       "CH":4,
-       "prof":"Prof 12"
-    },
-    {
-       "Curso":"Pós- Graduação",
-       "Semestre":6,
-       "Código":"PCO112",
-       "Disciplina":"Simuladores (Pós)",
-       "CH":4,
-       "prof":"Prof 3"
-    },
-    {
-       "Curso":"Pós- Graduação",
-       "Semestre":4,
-       "Código":"PCO003",
-       "Disciplina":"Sistemas Operacionais (Pós)",
-       "CH":2,
-       "prof":"Prof 4"
-    },
-    {
-       "Curso":"Pós- Graduação",
-       "Semestre":6,
-       "Código":"PCO202",
-       "Disciplina":"Tópicos em Engenharia de Software (Pós)",
-       "CH":4,
-       "prof":"Prof 17"
-    }
- ]
+   {
+       "course": "CCO",
+       "name": "Fundamentos de Programação (CCO e SIN)",
+       "semester": 2,
+       "code": "XDES01",
+       "ch": 4,
+       "teacher": "Prof 12"
+   },
+   {
+       "course": "CCO",
+       "name": "Programação Lógica e Funcional",
+       "semester": 2,
+       "code": "CDES05",
+       "ch": 4,
+       "teacher": "Prof 7"
+   },
+   {
+       "course": "CCO",
+       "name": "Arquitetura de Computadores II",
+       "semester": 2,
+       "code": "CRSC04",
+       "ch": 4,
+       "teacher": "Prof 13"
+   },
+   {
+       "course": "CCO",
+       "name": "Algoritmos e Estruturas de Dados I",
+       "semester": 2,
+       "code": "CTCO01",
+       "ch": 4,
+       "teacher": "Prof 15"
+   },
+   {
+       "course": "CCO",
+       "name": "Modelagem Computacional",
+       "semester": 2,
+       "code": "CMAC04",
+       "ch": 4,
+       "teacher": "Prof 5"
+   },
+   {
+       "course": "CCO",
+       "name": "Organização e Arquitetura de Computadores I",
+       "semester": 2,
+       "code": "CIC120",
+       "ch": 4,
+       "teacher": "Prof 13"
+   },
+   {
+       "course": "CCO",
+       "name": "Economia da Informação",
+       "semester": 2,
+       "code": "CIC310",
+       "ch": 3,
+       "teacher": "Prof 2"
+   },
+   {
+       "course": "CCO",
+       "name": "Análise e Projeto de Algoritmos I",
+       "semester": 4,
+       "code": "CIC110",
+       "ch": 4,
+       "teacher": "Prof 14"
+   },
+   {
+       "course": "CCO",
+       "name": "Sistemas Operacionais",
+       "semester": 4,
+       "code": "COM120",
+       "ch": 5,
+       "teacher": "Prof 11"
+   },
+   {
+       "course": "CCO",
+       "name": "Engenharia de Sofware I",
+       "semester": 4,
+       "code": "COM210",
+       "ch": 5,
+       "teacher": "Prof 8"
+   },
+   {
+       "course": "CCO",
+       "name": "Computação Orientada a Objetos I",
+       "semester": 4,
+       "code": "COM220",
+       "ch": 4,
+       "teacher": "Prof 9"
+   },
+   {
+       "course": "CCO",
+       "name": "Paradigmas de Programação",
+       "semester": 6,
+       "code": "CIC133",
+       "ch": 4,
+       "teacher": "Prof 7"
+   },
+   {
+       "course": "CCO",
+       "name": "Compiladores",
+       "semester": 6,
+       "code": "CIC220",
+       "ch": 4,
+       "teacher": "Prof 5"
+   },
+   {
+       "course": "CCO",
+       "name": "Inteligência Artificial",
+       "semester": 6,
+       "code": "CIC260",
+       "ch": 4,
+       "teacher": "Prof 3"
+   },
+   {
+       "course": "CCO",
+       "name": "Computação Gráfica",
+       "semester": 6,
+       "code": "CIC270",
+       "ch": 3,
+       "teacher": "Prof 6"
+   },
+   {
+       "course": "CCO",
+       "name": "Banco de Dados II",
+       "semester": 6,
+       "code": "COM231",
+       "ch": 4,
+       "teacher": "Prof 18"
+   },
+   {
+       "course": "CCO",
+       "name": "Adm. e Gerência de Redes de Computadores",
+       "semester": 6,
+       "code": "COM241",
+       "ch": 3,
+       "teacher": "Prof 4"
+   },
+   {
+       "course": "CCO",
+       "name": "Informática e Sociedade",
+       "semester": 6,
+       "code": "COM312",
+       "ch": 3,
+       "teacher": "Prof 2"
+   },
+   {
+       "course": "SIN",
+       "name": "Programação Orientada a Objetos",
+       "semester": 2,
+       "code": "XDES02",
+       "ch": 4,
+       "teacher": "Prof 9"
+   },
+   {
+       "course": "SIN",
+       "name": "Engenharia de Software I",
+       "semester": 2,
+       "code": "XDES04",
+       "ch": 4,
+       "teacher": "Prof 8"
+   },
+   {
+       "course": "SIN",
+       "name": "Algoritmos e Programação I",
+       "semester": 2,
+       "code": "STCO01",
+       "ch": 4,
+       "teacher": "Prof 14"
+   },
+   {
+       "course": "SIN",
+       "name": "Matemática Discreta",
+       "semester": 2,
+       "code": "XMAC01",
+       "ch": 4,
+       "teacher": "Prof 5"
+   },
+   {
+       "course": "SIN",
+       "name": "Comportamento Organizacional",
+       "semester": 2,
+       "code": "SIN411",
+       "ch": 3,
+       "teacher": "Prof 2"
+   },
+   {
+       "course": "SIN",
+       "name": "Organização e Arquitetura de Computadores",
+       "semester": 2,
+       "code": "SIN120",
+       "ch": 4,
+       "teacher": "Prof 11"
+   },
+   {
+       "course": "SIN",
+       "name": "Computação Orientada a Objetos II",
+       "semester": 4,
+       "code": "COM221",
+       "ch": 4,
+       "teacher": "Prof 15"
+   },
+   {
+       "course": "SIN",
+       "name": "Sistemas Operacionais",
+       "semester": 4,
+       "code": "COM120",
+       "ch": 5,
+       "teacher": "Prof 13"
+   },
+   {
+       "course": "SIN",
+       "name": "Engenharia de Software II",
+       "semester": 4,
+       "code": "COM211",
+       "ch": 4,
+       "teacher": "Prof 10"
+   },
+   {
+       "course": "SIN",
+       "name": "Banco de Dados I",
+       "semester": 4,
+       "code": "COM230",
+       "ch": 4,
+       "teacher": "Prof 12"
+   },
+   {
+       "course": "SIN",
+       "name": "Algoritmos e Grafos",
+       "semester": 4,
+       "code": "SIN110",
+       "ch": 3,
+       "teacher": "Prof 16"
+   },
+   {
+       "course": "SIN",
+       "name": "Informática e Sociedade",
+       "semester": 6,
+       "code": "COM312",
+       "ch": 3,
+       "teacher": "Prof 2"
+   },
+   {
+       "course": "SIN",
+       "name": "Engenharia de Projeto de Software",
+       "semester": 6,
+       "code": "COM212",
+       "ch": 4,
+       "teacher": ""
+   },
+   {
+       "course": "SIN",
+       "name": "Adm. e Gerência de Redes de Computadores",
+       "semester": 6,
+       "code": "COM241",
+       "ch": 3,
+       "teacher": "Prof 4"
+   },
+   {
+       "course": "SIN",
+       "name": "Sistemas Distribuídos",
+       "semester": 6,
+       "code": "COM242",
+       "ch": 4,
+       "teacher": "Prof 16"
+   },
+   {
+       "course": "SIN",
+       "name": "Desenvolvimento de Sistemas na Web",
+       "semester": 6,
+       "code": "COM222",
+       "ch": 5,
+       "teacher": "Prof 9"
+   },
+   {
+       "course": "Outros Cursos",
+       "name": "Fundamentos de Programação (EPR/EHD)",
+       "semester": 2,
+       "code": "CCO016",
+       "ch": 4,
+       "teacher": "Prof 15"
+   },
+   {
+       "course": "Outros Cursos",
+       "name": "Fundamentos de Programação (ECI/EAM)",
+       "semester": 2,
+       "code": "CCO016",
+       "ch": 4,
+       "teacher": "Prof 8"
+   },
+   {
+       "course": "Outros Cursos",
+       "name": "Fundamentos de Programação (FBA)",
+       "semester": 2,
+       "code": "CCO016",
+       "ch": 4,
+       "teacher": "Prof 3"
+   },
+   {
+       "course": "Optativas",
+       "name": "Tópicos Especiais em Engenharia de Software (PEGA)",
+       "semester": 4,
+       "code": "COM922",
+       "ch": 4,
+       "teacher": "Prof 4"
+   },
+   {
+       "course": "Optativas",
+       "name": "Desenvolvimento de Jogos",
+       "semester": 4,
+       "code": "COM937",
+       "ch": 4,
+       "teacher": "Prof 15"
+   },
+   {
+       "course": "Optativas",
+       "name": "Maratona de Programação I",
+       "semester": 6,
+       "code": "ECOE44",
+       "ch": 3,
+       "teacher": "Prof 11"
+   },
+   {
+       "course": "Optativas",
+       "name": "Tópicos Especiais em Programação (Programação Parale",
+       "semester": 6,
+       "code": "COM919",
+       "ch": 4,
+       "teacher": "Prof 13"
+   },
+   {
+       "course": "Optativas",
+       "name": "Data Mining Aplicado",
+       "semester": 4,
+       "code": "COM997",
+       "ch": 4,
+       "teacher": "Prof 18"
+   },
+   {
+       "course": "Pós- Graduação",
+       "name": "Arquitetura de Software (Opt+Pós)",
+       "semester": 4,
+       "code": "PCO118",
+       "ch": 4,
+       "teacher": "Prof 10"
+   },
+   {
+       "course": "Pós- Graduação",
+       "name": "Visualização de Informação (Opt+Pós)",
+       "semester": 4,
+       "code": "PCO114",
+       "ch": 4,
+       "teacher": "Prof 12"
+   },
+   {
+       "course": "Pós- Graduação",
+       "name": "Simuladores (Pós)",
+       "semester": 6,
+       "code": "PCO112",
+       "ch": 4,
+       "teacher": "Prof 3"
+   },
+   {
+       "course": "Pós- Graduação",
+       "name": "Sistemas Operacionais (Pós)",
+       "semester": 4,
+       "code": "PCO003",
+       "ch": 2,
+       "teacher": "Prof 4"
+   },
+   {
+       "course": "Pós- Graduação",
+       "name": "Tópicos em Engenharia de Software (Pós)",
+       "semester": 6,
+       "code": "PCO202",
+       "ch": 4,
+       "teacher": "Prof 17"
+   }
+]
