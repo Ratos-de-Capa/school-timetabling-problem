@@ -1,3 +1,5 @@
+import pandas as pd
+
 def get_teacher(row):
     teacher = ""
     for col in df.columns[6:]:
