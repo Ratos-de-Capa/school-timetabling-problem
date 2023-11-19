@@ -1,6 +1,8 @@
 from utils.json import read_json_data
 from models.schedules import Schedules
 import networkx as nx
+import csv
+import pandas as pd
 
 def generate_course_graph(data):
     G = nx.Graph()
@@ -74,17 +76,13 @@ def allocate_discipline(graph, discipline_index, schedules: Schedules):
         4: schedules.friday,
         5: schedules.saturday
     }
+
+    course = graph.nodes[discipline_index]['course']
     
-    isNightCourse = False
-    hasSaturdayClass = False
+    isNightCourse = course == 'SIN'
+    hasSaturdayClass = course not in ['SIN', 'CCO']
     days = 0
 
-    if graph.nodes[discipline_index]['course'] == 'SIN':
-        isNightCourse = True
-    elif graph.nodes[discipline_index]['course'] == 'CCO':
-        pass
-    else:
-        hasSaturdayClass = True   
 
     ch = int(graph.nodes[discipline_index]['ch'])
 
@@ -100,11 +98,19 @@ def allocate_discipline(graph, discipline_index, schedules: Schedules):
                     continue
 
                 if available(graph, discipline_index, day, j):
-                    day[j].append({'name': graph.nodes[discipline_index]['name'], 'code': graph.nodes[discipline_index]['code'],
-                                   'semester': graph.nodes[discipline_index]['semester'], 'course': graph.nodes[discipline_index]['course'],
-                                   'teacher': graph.nodes[discipline_index]['teacher'], 'ch': graph.nodes[discipline_index]['ch'],
-                                   'horario': j})
+                    
+                    day[j].append({
+                            'name': graph.nodes[discipline_index]['name'],
+                            'code': graph.nodes[discipline_index]['code'],
+                            'semester': graph.nodes[discipline_index]['semester'],
+                            'course': graph.nodes[discipline_index]['course'],
+                            'teacher': graph.nodes[discipline_index]['teacher'],
+                            'ch': graph.nodes[discipline_index]['ch'],
+                            'horario': j
+                            })
+                    
                     added = True
+                    
                     break
             
             if (added):
@@ -133,7 +139,98 @@ def getSchedules(data):
 
     return schedules.__dict__
 
+
+def write_csv(data):
+    with open('schedules.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Horário", "Disciplina", "Código", "Professor", "CH", "Semestre", "Curso"])
+        
+        for disc in data:
+            writer.writerow([disc['horario'], disc['name'], disc['code'], disc['teacher'], disc['ch'], disc['semester'], disc['course']])
+
+def obter_siglas_horarios(lista_horarios):
+    siglas = []
+
+    def formatar_sigla(dia_semana, periodo, horario_no_dia):
+        horario = (horario_no_dia / dia_semana) % 14 + 1
+        return '{}{}{}'.format(dia_semana, periodo, horario_no_dia % 14 + 1 )
+
+    def get_periodo(horario):
+        return 'M' if horario % 14 <= 5 else ('T' if horario % 14 <= 10 else 'N')
+    
+    def get_number_by_day(day):
+        if day == 'monday':
+            return 2
+        elif day == 'tuesday':
+            return 3
+        elif day == 'wednesday':
+            return 4
+        elif day == 'thursday':
+            return 5
+        elif day == 'friday':
+            return 6
+        elif day == 'saturday':
+            return 7
+
+    # cria mapa de silgas por id unico de horario
+    
+    siglas = {}
+    
+    for horario in lista_horarios:
+        sigla = formatar_sigla(get_number_by_day(horario['day']), get_periodo(horario['value']), horario['value'])
+        siglas[horario['key']].append(sigla) if horario['key'] in siglas else siglas.update({horario['key']: [sigla]})
+    
+    result = {}
+    
+    print(len(lista_horarios))
+
+    for item in siglas:
+        for sigla in siglas[item]:
+                
+            prox = sigla[0] + sigla[1] + str(int(sigla[2]) + 1) 
+            prox2 = sigla[0] + sigla[1] + str(int(sigla[2]) + 2)
+            
+            if prox in siglas[item]:
+                sigla = sigla[:-2] + str(int(sigla[-1:]) + int(prox[-1:]))
+                siglas[item].remove(prox)
+            elif prox2 in siglas[item]:
+                sigla = sigla[:-2] + str(int(sigla[-1:]) + int(prox2[-1:]))
+                siglas[item].remove(prox2)
+                
+            result[item].append(sigla) if item in result else result.update({item: [sigla]})
+
+    return siglas
+        
+
+def getId(horario):
+    return horario['code'] + '-' + horario['course']
+
 if __name__ == "__main__":
     data = read_json_data("./cenarios/cenario1.json")
-    print(getSchedules(data))
+    schedules = getSchedules(data)
+
+    horarios = []
+    horariosMap = {}
+
+    for day in schedules:
+        if day == 'length':
+            continue
+             
+        for harario in schedules[day]:
+                for disc in harario:
+                    print(disc)
+                    horarios.append({ 'key': getId(disc), 'value': disc['horario'], 'day': day })
+                    horariosMap[getId(disc)] = disc
+        
+    result = obter_siglas_horarios(horarios)
+    
+    for item in result:
+        for sigla in result[item]:
+            horariosMap[item]['horario'] = sigla
+            
+    
+    write_csv(horariosMap.values())
+    
+    
+    print("Horários gerados com sucesso!")
     #getSchedules(data)
