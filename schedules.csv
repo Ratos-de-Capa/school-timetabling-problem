@@ -1,42 +1,42 @@
-Hor�rio,Disciplina,C�digo,Professor,CH,Semestre,Curso
-5M4,Fundamentos de Programação,XDES01,Prof 12,4,1,CCO
-5M4,Programação Orientada a Objetos,XDES02,Prof 9,4,3,CCO
-5M4,Processamento Digital de Imagens,CIC271,Prof 7,4,7,CCO
-7M1,Fundamentos de Programação (EBP / ECI),CCO016,Prof 3,4,1,Outros Cursos
+3M1,Fundamentos de Programação,XDES01,Prof 12,4,1,CCO
+3M1,Programação Orientada a Objetos,XDES02,Prof 9,4,3,CCO
+3M1,Processamento Digital de Imagens,CIC271,Prof 7,4,7,CCO
+3M3,Arquitetura de Computadores I,CRSC03,Prof 13,4,1,CCO
+2T7,Análise e Projeto de Algoritmos II,CIC111,Prof 14,3,5,CCO
+3M3,Gerência de Projeto de Software,COM212,Prof 1,4,7,CCO
+3M5,Matemática Discreta,XMAC01,Prof 5,4,1,CCO
+3M5,Engenharia de Software I,XDES04,Prof 1,4,3,CCO
+2T7,Projeto Integrado,CAHC04,Prof 16,2,1,CCO
+3M3,Linguagens Formais e Autômatos,CIC132,Prof 5,4,5,CCO
+3T7,Sistemas Operacionais,CRSC02,Prof 13,4,3,CCO
+3T7,Interação Humano-Computador,COM213,Prof 6,4,7,CCO
+3T7,Engenharia de Software II,COM211,Prof 11,4,5,CCO
+3T9,Algoritmos e Estrutura de Dados II,CTCO02,Prof 18,4,3,CCO
+4M1,Computação Orientada a Objetos II,COM221,Prof 10,4,5,CCO
+3N12,Métodos Matemáticos para Análise de Dados,XMAC02,Prof 9,4,3,CCO
+5M1,Desenvolvimento de Sistemas na Web,COM222,Prof 15,5,7,CCO
+4M2,Banco de Dados I,COM230,Prof 12,4,5,CCO
+4M1,Algoritmos em Grafos,CMAC03,Prof 16,4,3,CCO
+5M1,Redes de Computadores,COM240,Prof 4,4,5,CCO
+5M2,Sistemas Distribuídos,COM242,Prof 16,4,7,CCO
+4T7,Análise de Investimento em Informática,COM311,Prof 2,3,5,CCO
+Horário,Disciplina,Código,Professor,CH,Semestre,Curso
 3M1,Cloud Computing,OPT3,Prof 1,4,5,Optativas
+3M3,Metaheurísticas para Problemas de Otimizaç,OPT1,Prof 17,4,3,Optativas
+3M5,Redes Complexas,OPT2,Prof 18,4,3,Optativas
+3T7,Tópicos em Ciência de Dados,OPT4,Prof 7,4,3,Optativas
+7M1,Fundamentos de Programação (EBP / ECI),CCO016,Prof 3,4,1,Outros Cursos
 3M1,Design Patterns,POS1,Prof 14,4,3,Pós- Graduação
 3M1,Visualização da Informação,POS2,Prof 13,4,4,Pós- Graduação
-5M5,Arquitetura de Computadores I,CRSC03,Prof 13,4,1,CCO
-5M3,Análise e Projeto de Algoritmos II,CIC111,Prof 14,3,5,CCO
-5T9,Gerência de Projeto de Software,COM212,Prof 1,4,7,CCO
-3M3,Metaheurísticas para Problemas de Otimizaç,OPT1,Prof 17,4,3,Optativas
 3M3,Visão Computacional,POS3,Prof 12,4,5,Pós- Graduação
-5T7,Matemática Discreta,XMAC01,Prof 5,4,1,CCO
-5T7,Engenharia de Software I,XDES04,Prof 1,4,3,CCO
-3M5,Redes Complexas,OPT2,Prof 18,4,3,Optativas
 3M5,Robótica,POS5,Prof 6,4,5,Pós- Graduação
-2N12,Projeto Integrado,CAHC04,Prof 16,2,1,CCO
-3T7,Tópicos em Ciência de Dados,OPT4,Prof 7,4,3,Optativas
-6M1,Linguagens Formais e Autômatos,CIC132,Prof 5,4,5,CCO
-5T9,Sistemas Operacionais,CRSC02,Prof 13,4,3,CCO
-6M1,Interação Humano-Computador,COM213,Prof 6,4,7,CCO
-6M3,Engenharia de Software II,COM211,Prof 11,4,5,CCO
-6N14,Fundamentos de Programação,XDES01,Prof 15,4,1,SIN
-6N12,Sistemas Inteligentes,SIN260,Prof 7,4,5,SIN
+3N12,,XDES01,Prof 15,4,1,SIN
+3N12,Sistemas Inteligentes,SIN260,Prof 7,4,5,SIN
 3N12,Governança de TI,SIN210,Prof 8,4,7,SIN
-6M1,Algoritmos e Estrutura de Dados II,CTCO02,Prof 18,4,3,CCO
-6M5,Computação Orientada a Objetos II,COM221,Prof 10,4,5,CCO
 2N14,Projeto Integrado,SAHC04,Prof 6,2,1,SIN
 3N14,Programação Web,XDES03,Prof 15,4,3,SIN
 3N14,Redes de Computadores,COM240,Prof 4,4,5,SIN
-6M3,Métodos Matemáticos para Análise de Dados,XMAC02,Prof 9,4,3,CCO
-6M3,Desenvolvimento de Sistemas na Web,COM222,Prof 15,5,7,CCO
-6T7,Banco de Dados I,COM230,Prof 12,4,5,CCO
 4N12,Fundamentos de Sistemas de Informação,SAHC05,Prof 10,4,1,SIN
-6M5,Algoritmos em Grafos,CMAC03,Prof 16,4,3,CCO
-6T9,Redes de Computadores,COM240,Prof 4,4,5,CCO
-6T7,Sistemas Distribuídos,COM242,Prof 16,4,7,CCO
-4T7,Análise de Investimento em Informática,COM311,Prof 2,3,5,CCO
 5N12,Engenharia de Software II,SDES05,Prof 8,4,3,SIN
 5N12,Linguagens Formais e Autômatos,SIN132,Prof 5,4,5,SIN
 5N14,Algoritmos e Programação II,STCO02,Prof 14,4,3,SIN

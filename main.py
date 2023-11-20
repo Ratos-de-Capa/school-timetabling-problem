@@ -2,7 +2,6 @@ from utils.json import read_json_data
 from models.schedules import Schedules
 import networkx as nx
 import csv
-import pandas as pd
 
 def generate_course_graph(data):
     G = nx.Graph()
@@ -124,18 +123,27 @@ def getSchedules(data):
 
     courses = ['SIN', 'CCO', 'others']
 
-    for course in courses:
-        for index in course_graph.nodes:
-            if course == "others":
-                schedules = allocate_discipline(course_graph, index, schedules)
-                continue       
+    # for course in courses:
+    #     for index in course_graph.nodes:
+    #         if course == "others":
+    #             schedules = allocate_discipline(course_graph, index, schedules)
+    #             continue       
     
-            if course_graph.nodes[index]['course'] == course:
-                schedules = allocate_discipline(course_graph, index, schedules)
+    #         if course_graph.nodes[index]['course'] == course:
+    #             schedules = allocate_discipline(course_graph, index, schedules)
 
-    # for index in course_graph.nodes:
-    #     if course_graph.nodes[index]['course'] == 'SIN':
-    #         schedules = allocate_courses(course_graph, index, schedules)
+    for index in course_graph.nodes:
+        if course_graph.nodes[index]['course'] == 'SIN':
+            schedules = allocate_discipline(course_graph, index, schedules)
+
+    for index in course_graph.nodes:
+        if course_graph.nodes[index]['course'] == 'CCO':
+            schedules = allocate_discipline(course_graph, index, schedules)
+
+    for index in course_graph.nodes:
+        if course_graph.nodes[index]['course'] != 'CCO' and course_graph.nodes[index]['course'] != 'SIN':
+            #print(f"allocating course: {course_graph.nodes[index]['course']}")
+            schedules = allocate_discipline(course_graph, index, schedules)
 
     return schedules.__dict__
 
@@ -208,6 +216,8 @@ def getId(horario):
 if __name__ == "__main__":
     data = read_json_data("./cenarios/cenario1.json")
     schedules = getSchedules(data)
+    #print(schedules)
+
 
     horarios = []
     horariosMap = {}
