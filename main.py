@@ -166,6 +166,10 @@ def obter_siglas_horarios(lista_horarios):
     def get_periodo(horario):
         return 'M' if horario % 14 <= 5 else ('T' if horario % 14 <= 10 else 'N')
     
+    def get_periodo_number(horario):
+        return 0 if horario % 14 <= 5 else (5 if horario % 14 <= 10 else 10)
+        
+    
     def get_number_by_day(day):
         if day == 'monday':
             return 2
@@ -182,32 +186,33 @@ def obter_siglas_horarios(lista_horarios):
 
     # cria mapa de silgas por id unico de horario
     
-    siglas = {}
+    siglasPerDisc = {}
     
     for horario in lista_horarios:
-        sigla = formatar_sigla(get_number_by_day(horario['day']), get_periodo(horario['value']), horario['value'])
-        siglas[horario['key']].append(sigla) if horario['key'] in siglas else siglas.update({horario['key']: [sigla]})
+        sigla = formatar_sigla(get_number_by_day(horario['day']), get_periodo(horario['value']), horario['value'] - get_periodo_number(horario['value']))
+        siglasPerDisc[horario['key']].append(sigla) if horario['key'] in siglasPerDisc else siglasPerDisc.update({horario['key']: [sigla]})
     
     result = {}
-    
-    print(len(lista_horarios))
 
-    for item in siglas:
-        for sigla in siglas[item]:
+    for dics in siglasPerDisc:
+        for sigla in siglasPerDisc[dics]:
                 
             prox = sigla[0] + sigla[1] + str(int(sigla[2]) + 1) 
             prox2 = sigla[0] + sigla[1] + str(int(sigla[2]) + 2)
             
-            if prox in siglas[item]:
-                sigla = sigla[:-2] + str(int(sigla[-1:]) + int(prox[-1:]))
-                siglas[item].remove(prox)
-            elif prox2 in siglas[item]:
-                sigla = sigla[:-2] + str(int(sigla[-1:]) + int(prox2[-1:]))
-                siglas[item].remove(prox2)
+            newSigla = sigla
+            
+            if prox in siglasPerDisc[dics]:
+                newSigla = sigla[0] + sigla[1] + sigla[2:] + str(int(sigla[2]) + 1)
+                siglasPerDisc[dics].remove(prox)
                 
-            result[item].append(sigla) if item in result else result.update({item: [sigla]})
+            elif prox2 in siglasPerDisc[dics]:
+                newSigla = sigla[0] + sigla[1] + sigla[2:] + str(int(sigla[2]) + 1)
+                siglasPerDisc[dics].remove(prox2)
+                
+            result[dics].append(newSigla) if dics in result else result.update({dics: [newSigla]})
 
-    return siglas
+    return result
         
 
 def getId(horario):
@@ -235,8 +240,11 @@ if __name__ == "__main__":
     result = obter_siglas_horarios(horarios)
     
     for item in result:
+        comp = ''
         for sigla in result[item]:
-            horariosMap[item]['horario'] = sigla
+            comp += sigla + ' '
+        
+        horariosMap[item]['horario'] = comp 
             
     
     write_csv(horariosMap.values())
