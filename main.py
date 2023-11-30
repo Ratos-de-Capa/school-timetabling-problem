@@ -2,6 +2,8 @@ from utils.json import read_json_data
 from models.schedules import Schedules
 import networkx as nx
 import csv
+import matplotlib.pyplot as plt
+import pandas as pd
 
 def generate_course_graph(data):
     G = nx.Graph()
@@ -120,7 +122,7 @@ def allocate_discipline(graph, discipline_index, schedules: Schedules):
 def getSchedules(data):
     schedules = Schedules()
     course_graph = generate_course_graph(data)
-
+    
     courses = ['SIN', 'CCO', 'others']
 
     # for course in courses:
@@ -218,37 +220,42 @@ def obter_siglas_horarios(lista_horarios):
 def getId(horario):
     return horario['code'] + '-' + horario['course']
 
+def generate_colored_graph(course_graph, schedules):
+    df = pd.from_dicts(schedules)
+    print(df)
+
 if __name__ == "__main__":
     data = read_json_data("./cenarios/cenario1.json")
     schedules = getSchedules(data)
-    #print(schedules)
-
 
     horarios = []
     horariosMap = {}
-
-    for day in schedules:
-        if day == 'length':
-            continue
-             
-        for harario in schedules[day]:
-                for disc in harario:
-                    print(disc)
-                    horarios.append({ 'key': getId(disc), 'value': disc['horario'], 'day': day })
-                    horariosMap[getId(disc)] = disc
-        
-    result = obter_siglas_horarios(horarios)
     
-    for item in result:
-        comp = ''
-        for sigla in result[item]:
-            comp += sigla + ' '
+    course_graph = generate_course_graph(data)
+    colored_graph = generate_colored_graph(course_graph, schedules)
+    
+    # for day in schedules:
+    #     if day == 'length':
+    #         continue
+             
+    #     for harario in schedules[day]:
+    #             for disc in harario:
+    #                 print(disc)
+    #                 horarios.append({ 'key': getId(disc), 'value': disc['horario'], 'day': day })
+    #                 horariosMap[getId(disc)] = disc
         
-        horariosMap[item]['horario'] = comp 
+    # result = obter_siglas_horarios(horarios)
+    
+    # for item in result:
+    #     comp = ''
+    #     for sigla in result[item]:
+    #         comp += sigla + ' '
+        
+    #     horariosMap[item]['horario'] = comp 
             
     
-    write_csv(horariosMap.values())
+    # write_csv(horariosMap.values())
     
     
-    print("Horários gerados com sucesso!")
+    # print("Horários gerados com sucesso!")
     #getSchedules(data)
