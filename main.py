@@ -1,3 +1,5 @@
+from random import randint
+import random
 from utils.json import read_json_data
 from models.schedules import Schedules
 import networkx as nx
@@ -224,15 +226,65 @@ def generate_colored_graph(course_graph, schedules):
     df = pd.from_dicts(schedules)
     print(df)
 
+
+def generate_colors(horario):
+    random.seed(horario)
+    return "#{:06x}".format(random.randint(0, 0xFFFFFF))
+
+
+
+def create_schedule_graph(schedule_data):
+    G = nx.Graph()
+
+    for day, intervals in schedule_data.items():
+        if not isinstance(intervals, list):
+            continue
+
+        for interval in intervals:
+            if not isinstance(interval, list):
+                continue
+
+            for course in interval:
+                course_id = f"{course['code']}_{course['horario']}_{course['course']}_{day}"
+                G.add_node(course_id, label=course['name'], course=course['course'], teacher=course['teacher'], color=generate_colors(course_id))
+
+    for day, intervals in schedule_data.items():
+        if not isinstance(intervals, list):
+            continue
+
+        for interval in intervals:
+            if not isinstance(interval, list):
+                continue
+
+            for i, course in enumerate(interval):
+                for j in range(i + 1, len(interval)):
+                    if course['horario'] == interval[j]['horario']:
+                        course_id1 = f"{course['code']}_{course['horario']}_{course['course']}_{day}"
+                        course_id2 = f"{interval[j]['code']}_{interval[j]['horario']}_{interval[j]['course']}_{day}"
+                        G.add_edge(course_id1, course_id2)
+
+    return G
+
+
+
 if __name__ == "__main__":
     data = read_json_data("./cenarios/cenario1.json")
     schedules = getSchedules(data)
+    new_schedules = create_schedule_graph(schedules)
 
-    horarios = []
-    horariosMap = {}
+    pos = nx.spring_layout(new_schedules, seed=42)  # Seed para tornar o layout mais consistente
+    node_colors = [new_schedules.nodes[node]['color'] for node in new_schedules.nodes]
+    nx.draw(new_schedules, pos, with_labels=True, node_color=node_colors)
+    plt.show()
+
+
+
+
+    # horarios = []
+    # horariosMap = {}
     
-    course_graph = generate_course_graph(data)
-    colored_graph = generate_colored_graph(course_graph, schedules)
+    # course_graph = generate_course_graph(data)
+    # colored_graph = generate_colored_graph(course_graph, schedules)
     
     # for day in schedules:
     #     if day == 'length':
