@@ -6,12 +6,13 @@ import networkx as nx
 import csv
 import matplotlib.pyplot as plt
 import pandas as pd
+import json
 
 def generate_course_graph(data):
     G = nx.Graph()
 
     for i in range(len(data)):
-        G.add_node(i, course=data[i]['course'], semester=data[i]['semester'], teacher=data[i]['teacher'], ch=data[i]['ch'], code=data[i]['code'], name=data[i]['name'])
+        G.add_node(i, course=data[i]['course'], semester=data[i]['semester'], teacher=data[i]['teacher'], ch=data[i]['ch'], code=data[i]['code'], name=data[i]['name'], schedules=[])
 
     for i in range(len(data)):
         for j in range(i + 1, len(data)):
@@ -67,7 +68,6 @@ def available(graph, index, day, selectedSchedule):
         if graph.nodes[index]['ch'] > 3 and classPerDay >= 2:
             return False
 
-
     return True
 
 def allocate_discipline(graph, discipline_index, schedules: Schedules):
@@ -112,6 +112,14 @@ def allocate_discipline(graph, discipline_index, schedules: Schedules):
                             'horario': j
                             })
                     
+                    # add schedule in the graph
+                    
+                    real_schedule = j + (list(day_dict.values()).index(day) * 14)
+                    
+                    graph.nodes[discipline_index]['schedules'].append(real_schedule)
+                    graph.nodes[discipline_index]['schedules'].sort()
+                    
+                    
                     added = True
                     
                     break
@@ -119,7 +127,7 @@ def allocate_discipline(graph, discipline_index, schedules: Schedules):
             if (added):
                 break
 
-    return schedules
+    return schedules, graph
 
 def getSchedules(data):
     schedules = Schedules()
@@ -138,18 +146,18 @@ def getSchedules(data):
 
     for index in course_graph.nodes:
         if course_graph.nodes[index]['course'] == 'SIN':
-            schedules = allocate_discipline(course_graph, index, schedules)
+            schedules, course_graph = allocate_discipline(course_graph, index, schedules)
 
     for index in course_graph.nodes:
         if course_graph.nodes[index]['course'] == 'CCO':
-            schedules = allocate_discipline(course_graph, index, schedules)
+            schedules, course_graph = allocate_discipline(course_graph, index, schedules)
 
     for index in course_graph.nodes:
         if course_graph.nodes[index]['course'] != 'CCO' and course_graph.nodes[index]['course'] != 'SIN':
             #print(f"allocating course: {course_graph.nodes[index]['course']}")
-            schedules = allocate_discipline(course_graph, index, schedules)
+            schedules, course_graph = allocate_discipline(course_graph, index, schedules)
 
-    return schedules.__dict__
+    return schedules.__dict__, course_graph
 
 
 def write_csv(data):
@@ -222,92 +230,65 @@ def obter_siglas_horarios(lista_horarios):
 def getId(horario):
     return horario['code'] + '-' + horario['course']
 
-def generate_colored_graph(course_graph, schedules):
-    df = pd.from_dicts(schedules)
-    print(df)
+def draw_colored_graph(graph):
+    unique_schedules = [] 
+    
+    for index in graph.nodes:
+        if graph.nodes[index]['schedules'] not in unique_schedules:
+            unique_schedules.append(graph.nodes[index]['schedules'])
+    
+    color_map = []
+    for i  in range(len(unique_schedules)):
+        color_map.append(f"C{i}")
 
+    node_colors = []
 
-def generate_colors(horario):
-    random.seed(horario)
-    return "#{:06x}".format(random.randint(0, 0xFFFFFF))
+    for index in graph.nodes:
+        node_colors.append(color_map[unique_schedules.index(graph.nodes[index]['schedules'])])
 
-
-
-def create_schedule_graph(schedule_data):
-    G = nx.Graph()
-
-    for day, intervals in schedule_data.items():
-        if not isinstance(intervals, list):
-            continue
-
-        for interval in intervals:
-            if not isinstance(interval, list):
-                continue
-
-            for course in interval:
-                course_id = f"{course['code']}_{course['horario']}_{course['course']}_{day}"
-                G.add_node(course_id, label=course['name'], course=course['course'], teacher=course['teacher'], color=generate_colors(course_id))
-
-    for day, intervals in schedule_data.items():
-        if not isinstance(intervals, list):
-            continue
-
-        for interval in intervals:
-            if not isinstance(interval, list):
-                continue
-
-            for i, course in enumerate(interval):
-                for j in range(i + 1, len(interval)):
-                    if course['horario'] == interval[j]['horario']:
-                        course_id1 = f"{course['code']}_{course['horario']}_{course['course']}_{day}"
-                        course_id2 = f"{interval[j]['code']}_{interval[j]['horario']}_{interval[j]['course']}_{day}"
-                        G.add_edge(course_id1, course_id2)
-
-    return G
-
-
-
-if __name__ == "__main__":
-    data = read_json_data("./cenarios/cenario1.json")
-    schedules = getSchedules(data)
-    new_schedules = create_schedule_graph(schedules)
-
-    pos = nx.spring_layout(new_schedules, seed=42)  # Seed para tornar o layout mais consistente
-    node_colors = [new_schedules.nodes[node]['color'] for node in new_schedules.nodes]
-    nx.draw(new_schedules, pos, with_labels=True, node_color=node_colors)
+    # Desenhar o grafo
+    pos = nx.spring_layout(graph)  # Você pode escolher outro layout se desejar
+    nx.draw(graph, pos, with_labels=True, node_color=node_colors, cmap=plt.cm.rainbow)
     plt.show()
 
 
+def graph_to_json(graph):
+    graph_dict = {}
 
+    for index in graph.nodes:
+        key = f"{index}__{graph.nodes[index]['code']}_{graph.nodes[index]['course']}"
+        graph_dict[key] = graph.nodes[index]
 
-    # horarios = []
-    # horariosMap = {}
+    return json.dumps(graph_dict, indent=2)
+
+if __name__ == "__main__":
+    data = read_json_data("./cenarios/cenario1.json")
+    schedules, graph_colored = getSchedules(data)
+
+    horarios = []
+    horariosMap = {}
     
-    # course_graph = generate_course_graph(data)
-    # colored_graph = generate_colored_graph(course_graph, schedules)
-    
-    # for day in schedules:
-    #     if day == 'length':
-    #         continue
+    for day in schedules:
+        if day == 'length':
+            continue
              
-    #     for harario in schedules[day]:
-    #             for disc in harario:
-    #                 print(disc)
-    #                 horarios.append({ 'key': getId(disc), 'value': disc['horario'], 'day': day })
-    #                 horariosMap[getId(disc)] = disc
+        for harario in schedules[day]:
+                for disc in harario:
+                    print(disc)
+                    horarios.append({ 'key': getId(disc), 'value': disc['horario'], 'day': day })
+                    horariosMap[getId(disc)] = disc
         
-    # result = obter_siglas_horarios(horarios)
+    result = obter_siglas_horarios(horarios)
     
-    # for item in result:
-    #     comp = ''
-    #     for sigla in result[item]:
-    #         comp += sigla + ' '
+    for item in result:
+        comp = ''
+        for sigla in result[item]:
+            comp += sigla + ' '
         
-    #     horariosMap[item]['horario'] = comp 
+        horariosMap[item]['horario'] = comp 
             
     
-    # write_csv(horariosMap.values())
+    write_csv(horariosMap.values())
     
-    
-    # print("Horários gerados com sucesso!")
+    print("Horários gerados com sucesso!")
     #getSchedules(data)
